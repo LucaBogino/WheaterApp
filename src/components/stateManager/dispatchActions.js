@@ -1,19 +1,14 @@
 export const actions = {
-    // ADDBEER: "ADDBEER", EXAMPLE
-
+    CHANGE_CITY: "CHANGE_CITY",
+    SET_CITY_weather: "SET_CITY_weather"
 }
 
-// EXAMPLE
-// export const add = ({nome, prezzo, disponibilità, img}) => ({
+export const changeCity = (city) => ({
+    selectedCity: city,
+    type: actions.CHANGE_CITY,
+});
 
-//   x: {
-//     nome: nome,
-//     prezzo: prezzo,
-//     disponibilità: disponibilità,
-//     img: img 
-
-//   },
-  
-//   type: actions.ADDBEER,
-
-// });
+export const setCityweather = (info) => ({
+    weather: info,
+    type: actions.SET_CITY_weather,
+});

@@ -1,0 +1,32 @@
+
+.search_container {
+    position: relative;
+    box-shadow: rgb(0 0 0 / 25%) 0px 14px 28px, rgb(0 0 0 / 22%) 0px 10px 10px;
+}
+
+.inp{
+    min-height: 70px;
+    padding: 15px;
+    border: none;
+    color: gray;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.btn_search {
+    padding: 0 !important;
+    position: absolute;
+    right: 0;
+    border: none;
+    min-height: 70px;
+    background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);
+    border-radius: 20px;
+    max-width: 40px;
+}
+
+.common_b_radius {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}

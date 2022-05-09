@@ -1,4 +1,4 @@
-# WheaterApp
+# weatherApp
 
 Per iniziare installare le dipendenze alle librerie usate con i seguenti comandi:
 
