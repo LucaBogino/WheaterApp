@@ -40,6 +40,7 @@ input:focus{
   top: 45%;
   left: 45%;
   font-size: 20px;
+  z-index: 99;
 }
 
 .bck {
@@ -51,6 +52,8 @@ input:focus{
   align-items: center;
   justify-content: space-evenly;
   color: white;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .br-25{

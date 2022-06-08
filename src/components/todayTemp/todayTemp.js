@@ -42,7 +42,7 @@ function TodayTemp() {
         <div className="container">
             <Form.Label className='common-label ms-2'>Oggi a {cityInfo ? cityInfo : 'Milano'}</Form.Label>
             <div className="bck br-25 w shadow">
-                <Form.Label className="now">Adesso</Form.Label>
+                <Form.Label className="now">Temperatura</Form.Label>
                 <div className="tempContainer">
                     <div className="column">
                         {
