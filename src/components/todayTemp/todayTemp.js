@@ -20,6 +20,7 @@ function TodayTemp() {
 
     const getTodayTemp = () => {
         let findTodayData = cityTemp.filter(x => new Date(x.dt_txt).toDateString() === today.toDateString());
+        if (findTodayData.length > 4) findTodayData.splice(0 , 4);
         setTodayData(findTodayData);
     }
 
@@ -29,9 +30,7 @@ function TodayTemp() {
         findTodayData.forEach(el => {
             el.main.temp = el.main.temp - 273.15; // formula per passare da gradi kelvin a celsius
             temps.push(Math.round(el.main.temp * 10) / 10);
-            let h = new Date(el.dt_txt).getHours() < 12 ?
-                new Date(el.dt_txt).getHours() + ' a.m.' : 
-                new Date(el.dt_txt).getHours() + ' p.m.'
+            let h = new Date(el.dt_txt).getHours() 
             hours.push(h);
         });
         setTemps(temps);
@@ -57,7 +56,7 @@ function TodayTemp() {
                     <div className="column">
                         {
                             hours.map((hour, id) =>
-                                <div className="mb-75" key={id}>{hour}</div>
+                                <div className="mb-75" key={id}>{hour}:00</div>
                             )
                         }
                     </div>
