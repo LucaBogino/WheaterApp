@@ -1,11 +1,11 @@
-.secondRowContainer {
+.RowContainer {
     display: flex;
     align-items: flex-start;
     justify-content: space-evenly;
 }
 
 @media only screen and (max-width: 550px) {
-    .secondRowContainer {
+    .RowContainer {
         flex-direction: column;
         align-items: center;
     }

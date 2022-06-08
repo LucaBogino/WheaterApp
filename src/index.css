@@ -24,7 +24,7 @@ body{
 }
 
 .shadow {
-  box-shadow: rgb(0 0 0 / 25%) 0px 14px 28px, rgb(0 0 0 / 22%) 0px 10px 10px;
+  box-shadow: rgb(0 0 0 / 25%) 0px 14px 28px, rgb(0 0 0 / 22%) 0px 10px 10px !important;
 }
 
 .mxw-50{
@@ -78,4 +78,9 @@ input:focus{
   display: flex;
   flex-direction: column;
   align-self: flex-start;
+}
+
+
+.relative {
+  position: relative;
 }

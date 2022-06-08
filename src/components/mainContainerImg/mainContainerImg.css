@@ -1,0 +1,9 @@
+.max_img {
+    max-width: 800px !important;
+}
+
+.containerContent {
+    position: absolute;
+    top: 25%;
+    left: 15%;
+}

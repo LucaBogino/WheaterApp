@@ -11,7 +11,6 @@ function TodayTemp() {
 
     const today = new Date();
 
-    const cityInfo = useSelector(state => state.city);
     const cityTemp = useSelector(state => state.futureWeather);
 
     useEffect(() => {
@@ -39,7 +38,7 @@ function TodayTemp() {
 
     return (
         <div className="container">
-            <Form.Label className='common-label ms-2'>Oggi a {cityInfo ? cityInfo : 'Milano'}</Form.Label>
+            <Form.Label className='common-label ms-2'>Oggi</Form.Label>
             <div className="bck br-25 w shadow">
                 <Form.Label className="now">Temperatura</Form.Label>
                 <div className="tempContainer">
