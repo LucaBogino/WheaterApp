@@ -24,6 +24,7 @@ function App() {
   }, [city]);
 
   const getPosition = () => {
+    setLoading(true);
     axios.get(commonUrl + geoStartUrl + city + geoEndUrl + APIkey)
     .then((res) => {
       getweather(res.data[0].lon, res.data[0].lat);
@@ -37,6 +38,9 @@ function App() {
     axios.get(commonUrl + `data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIkey}`)
     .then((res) => {
       store.dispatch(setCityweather(res.data));
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
     })
     .catch((error) => {
       console.log(error);
