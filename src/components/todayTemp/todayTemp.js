@@ -18,10 +18,6 @@ function TodayTemp() {
         if (cityTemp) getTodayTemp()
       }, [cityTemp]);
 
-    // const temps = [22, 20, 28, 16];
-    // const hours = ['21', '18', '12', '09'];
-
-
     const getTodayTemp = () => {
         let findTodayData = cityTemp.filter(x => new Date(x.dt_txt).toDateString() === today.toDateString());
         setTodayData(findTodayData);
@@ -31,7 +27,7 @@ function TodayTemp() {
         let temps = [];
         let hours = [];
         findTodayData.forEach(el => {
-            el.main.temp = el.main.temp - 273.15;
+            el.main.temp = el.main.temp - 273.15; // formula per passare da gradi kelvin a celsius
             temps.push(Math.round(el.main.temp * 10) / 10);
             let h = new Date(el.dt_txt).getHours() < 12 ?
                 new Date(el.dt_txt).getHours() + ' a.m.' : 
@@ -44,14 +40,14 @@ function TodayTemp() {
 
     return (
         <div className="container">
-            <Form.Label className='common-label ms-2'>Oggi a {cityInfo}</Form.Label>
+            <Form.Label className='common-label ms-2'>Oggi a {cityInfo ? cityInfo : 'Milano'}</Form.Label>
             <div className="bck br-25 w shadow">
                 <Form.Label className="now">Adesso</Form.Label>
                 <div className="tempContainer">
                     <div className="column">
                         {
                             temps.map((temp, id) =>
-                                <div className="mb-75" key={id}>{temp}</div>
+                                <div className="mb-75" key={id}>{temp}°</div>
                             )
                         }
                     </div>

@@ -4,7 +4,7 @@ const reducer = (state={}, data ) => {
     
     switch (data.type) {
         case actions.CHANGE_CITY: // Cambia la città selezionata dall'utente
-            return {...state, city: data.selectedCity};
+            return {...state, city: data.selectedCity.charAt(0).toUpperCase() + data.selectedCity.slice(1)};
 
         case actions.SET_CITY_WEATHER: // setta le informazioni meteo attuali
             return {...state, weather: data.weather};

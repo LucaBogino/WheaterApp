@@ -76,7 +76,7 @@ function App() {
       <Provider store={store}>
         <div className="App col-md-24">
           <div className='secondRowContainer'>
-            <div className='col-md-3'>
+            <div className='col-md-2'>
               <TodayTemp />
             </div>
             <div className='col-md-16'></div>
