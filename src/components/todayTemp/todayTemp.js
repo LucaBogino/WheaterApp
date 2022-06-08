@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { useSelector } from "react-redux";
 import {Form} from 'react-bootstrap';
 import tempImg from '../../assets/temp.png';
@@ -5,11 +6,41 @@ import './today.css'
 
 function TodayTemp() {
 
-    const cityInfo = useSelector(state => state.city);
-    const cityTemp = useSelector(state => state.weather);
+    const [temps, setTemps] = useState([]);
+    const [hours, setHours] = useState([]);
 
-    const temps = [22, 20, 28, 16];
-    const hours = ['15', '13', '11', '09'];
+    const today = new Date();
+
+    const cityInfo = useSelector(state => state.city);
+    const cityTemp = useSelector(state => state.futureWeather);
+
+    useEffect(() => {
+        if (cityTemp) getTodayTemp()
+      }, [cityTemp]);
+
+    // const temps = [22, 20, 28, 16];
+    // const hours = ['21', '18', '12', '09'];
+
+
+    const getTodayTemp = () => {
+        let findTodayData = cityTemp.filter(x => new Date(x.dt_txt).toDateString() === today.toDateString());
+        setTodayData(findTodayData);
+    }
+
+    const setTodayData = (findTodayData) => {
+        let temps = [];
+        let hours = [];
+        findTodayData.forEach(el => {
+            el.main.temp = el.main.temp - 273.15;
+            temps.push(Math.round(el.main.temp * 10) / 10);
+            let h = new Date(el.dt_txt).getHours() < 12 ?
+                new Date(el.dt_txt).getHours() + ' a.m.' : 
+                new Date(el.dt_txt).getHours() + ' p.m.'
+            hours.push(h);
+        });
+        setTemps(temps);
+        setHours(hours);
+    }
 
     return (
         <div className="container">

@@ -1,6 +1,7 @@
 export const actions = {
     CHANGE_CITY: "CHANGE_CITY",
-    SET_CITY_weather: "SET_CITY_weather"
+    SET_CITY_WEATHER: "SET_CITY_WEATHER",
+    FUTURE_WEATHER: 'FUTURE_WEATHER'
 }
 
 export const changeCity = (city) => ({
@@ -10,5 +11,10 @@ export const changeCity = (city) => ({
 
 export const setCityweather = (info) => ({
     weather: info,
-    type: actions.SET_CITY_weather,
+    type: actions.SET_CITY_WEATHER,
+});
+
+export const setFutureWeather = (info) => ({
+    futureWeather: info,
+    type: actions.FUTURE_WEATHER,
 });

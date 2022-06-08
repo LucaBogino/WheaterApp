@@ -4,7 +4,7 @@ import store from './components/stateManager/store';
 import Search from './components/search/search';
 import TodayTemp from './components/todayTemp/todayTemp';
 import { useState } from 'react';
-import { changeCity, setCityweather } from "./components/stateManager/dispatchActions";
+import { changeCity, setCityweather, setFutureWeather } from "./components/stateManager/dispatchActions";
 import {Spinner} from 'react-bootstrap';
 import { useEffect } from 'react';
 import axios from 'axios';
@@ -27,7 +27,10 @@ function App() {
     setLoading(true);
     axios.get(commonUrl + geoStartUrl + city + geoEndUrl + APIkey)
     .then((res) => {
-      getweather(res.data[0].lon, res.data[0].lat);
+      const lon = res.data[0].lon;
+      const lat = res.data[0].lat;
+      getweather(lon, lat);
+      getFutureWeather(lon, lat);
     })
     .catch((error) => {
       console.log(error);
@@ -46,6 +49,20 @@ function App() {
       console.log(error);
     })
   }
+
+  const getFutureWeather = (lon, lat)=> {
+    axios.get(commonUrl + `data/2.5/forecast?lon=${lon}&lat=${lat}&appid=${APIkey}`)
+    .then((res) => {
+      store.dispatch(setFutureWeather(res.data.list));
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+  }
+
   const setCity = (event) => {
     setSelectedCity(event);
     store.dispatch(changeCity(event));
