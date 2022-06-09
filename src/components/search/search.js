@@ -13,8 +13,11 @@ function Search(props) {
     }
 
     const changeSelectedCity = () => {
-        props.setCity(city);
-        setSelectedCity('');
+        if(city) {
+            props.setCity(city);
+            setSelectedCity('');
+        } else {
+        }
     }
 
     return (

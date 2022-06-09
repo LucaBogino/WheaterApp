@@ -4,6 +4,7 @@ import store from './components/stateManager/store';
 import Search from './components/search/search';
 import TodayTemp from './components/todayTemp/todayTemp';
 import MainContainer from './components/mainContainerImg/mainContainerImg';
+import TempShortcut from './components/tempShortcut/tempShortcut';
 import { useState } from 'react';
 import { changeCity, setCityweather, setFutureWeather } from "./components/stateManager/dispatchActions";
 import {Spinner} from 'react-bootstrap';
@@ -75,6 +76,7 @@ function App() {
         isLoading? <Spinner className='loading' animation="border" variant="primary" /> : <span></span>
       }
       <Provider store={store}>
+        <TempShortcut />
         <div className="App col-md-24">
           <div className='RowContainer mt-3 mb-5'>
             <div className='col-md-8'>

@@ -1,0 +1,19 @@
+.tempTxt {
+    font-weight: 600;
+    font-size: 35px;
+}
+
+.shortcutCont {
+    width: 15%;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 25%;
+    padding-left: 1%;
+    padding-right: 2%;
+    z-index: 99;
+}
