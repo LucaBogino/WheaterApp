@@ -10,16 +10,21 @@
 }
 
 .bckMainContainer {
-    max-width: 800px;
-    max-height: 400px;
-    min-height: 350px;
-    min-width: 700px;
+    min-height: 50vh;
+    min-width: 60vw;
     background: url(../../assets/city.jpg) left center;
-    background-size: inherit;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
 .cityText {
     font-weight: 600;
     font-size: 23px;
+}
+
+@media only screen and (max-width: 550px) {
+    .containerContent {
+        top: 5%;
+        left: 25%;
+    }
 }

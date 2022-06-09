@@ -62,12 +62,14 @@ function MainContainer() {
     }
 
     return (
-        <div className='w relative bckMainContainer br-25 shadow'>
+        <div className='container'>
+            <div className='w relative bckMainContainer br-25 shadow'>
                 <div className='containerContent'>
                     <div className='cityText'>{cityInfo ? cityInfo : 'Milano'}</div>
                     <div>{todayDate}</div>
                     <div>{cityWeather?.weather[0].description.charAt(0).toUpperCase() + cityWeather?.weather[0].description.slice(1)}</div>
                 </div>
+            </div>
         </div>
     )
 }

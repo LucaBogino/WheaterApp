@@ -42,7 +42,7 @@ function TodayTemp() {
             <div className="bck br-25 w shadow">
                 <Form.Label className="now">Temperatura</Form.Label>
                 <div className="tempContainer">
-                    <div className="column">
+                    <div className="column mt-05">
                         {
                             temps.map((temp, id) =>
                                 <div className="mb-75" key={id}>{temp}°</div>
@@ -50,9 +50,9 @@ function TodayTemp() {
                         }
                     </div>
                     <div className="flex-center">
-                        <img className="w-50 mxw-50" src={tempImg}/>
+                        <img className="w-75 mxw-50" src={tempImg}/>
                     </div>
-                    <div className="column">
+                    <div className="column mt-05">
                         {
                             hours.map((hour, id) =>
                                 <div className="mb-75" key={id}>{hour}:00</div>

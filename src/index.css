@@ -17,6 +17,13 @@ body{
   font-family: sans-serif !important;
 }
 
+
+@media only screen and (min-width: 550px) {
+  .container {
+    padding-left: 5.5rem !important;
+  }
+}
+
 .common-label {
   font-weight: 600;
   font-size: 23px;
@@ -65,7 +72,11 @@ input:focus{
 }
 
 .mb-75 {
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.mt-05{
+  margin-top: 0.5rem;
 }
 
 .flex-center {

@@ -40,7 +40,7 @@ function App() {
   }
 
   const getweather = (lon, lat) => {
-    axios.get(commonUrl + `data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIkey}`)
+    axios.get(commonUrl + `data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIkey}&lang=it`)
     .then((res) => {
       store.dispatch(setCityweather(res.data));
       setTimeout(() => {
@@ -53,7 +53,7 @@ function App() {
   }
 
   const getFutureWeather = (lon, lat)=> {
-    axios.get(commonUrl + `data/2.5/forecast?lon=${lon}&lat=${lat}&appid=${APIkey}`)
+    axios.get(commonUrl + `data/2.5/forecast?lon=${lon}&lat=${lat}&appid=${APIkey}&lang=it`)
     .then((res) => {
       store.dispatch(setFutureWeather(res.data.list));
       setTimeout(() => {
@@ -84,8 +84,8 @@ function App() {
             </div>
             <div className='col-md-16'></div>
           </div>
-          <div className='RowContainer'>
-            <div className='col-md-2'>
+          <div className='RowContainer mb-5'>
+            <div className='col-md-3'>
               <TodayTemp />
             </div>
             <div className='col-md-16'></div>

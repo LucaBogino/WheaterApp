@@ -1,7 +1,7 @@
 .RowContainer {
     display: flex;
     align-items: flex-start;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 @media only screen and (max-width: 550px) {
