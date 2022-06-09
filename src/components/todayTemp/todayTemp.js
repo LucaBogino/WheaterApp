@@ -19,7 +19,7 @@ function TodayTemp() {
 
     const getTodayTemp = () => {
         let findTodayData = cityTemp.filter(x => new Date(x.dt_txt).toDateString() === today.toDateString());
-        if (findTodayData.length > 4) findTodayData.splice(0 , 4);
+        if (findTodayData.length > 4) findTodayData.splice(4);
         setTodayData(findTodayData);
     }
 
