@@ -1,3 +1,11 @@
 .now {
-    width: 100%; text-align: center; margin-top: 10%;
+    width: 100%;
+    text-align: center;
+    margin-top: 10%;
+    font-size: 18px;
+    background: white;
+    color: #6d88d7;
+    border-radius: 50px;
+    margin-left: 5%;
+    margin-right: 5%;
 }

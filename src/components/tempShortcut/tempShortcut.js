@@ -28,7 +28,7 @@ function TempShortcut() {
 
     const chooseImage = () => {
         switch(cityTemp.weather[0].main) {
-            case "Sun":
+            case "Clear":
                 setImage(sun);
             break;
             case "Clouds":

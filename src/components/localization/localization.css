@@ -1,0 +1,19 @@
+.loca_img {
+    max-width: 40px !important;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.loca-txt {
+    font-weight: 600;
+    font-size: 23px;
+}
+
+.pointer {
+    cursor: pointer;
+}

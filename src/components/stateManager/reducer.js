@@ -12,6 +12,9 @@ const reducer = (state={}, data ) => {
         case actions.FUTURE_WEATHER: // setta le informazioni per i prossimi 5 giorni (oggi compreso)
             return {...state, futureWeather: data.futureWeather};
 
+        case actions.TODAY:
+            return {...state, today: data.today};
+
         default:
             return state;
     }

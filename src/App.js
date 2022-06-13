@@ -5,8 +5,9 @@ import Search from './components/search/search';
 import TodayTemp from './components/todayTemp/todayTemp';
 import MainContainer from './components/mainContainerImg/mainContainerImg';
 import TempShortcut from './components/tempShortcut/tempShortcut';
+import Localization from './components/localization/localization';
 import { useState } from 'react';
-import { changeCity, setCityweather, setFutureWeather } from "./components/stateManager/dispatchActions";
+import { changeCity, setCityweather, setFutureWeather, setToday } from "./components/stateManager/dispatchActions";
 import {Spinner} from 'react-bootstrap';
 import { useEffect } from 'react';
 import axios from 'axios';
@@ -22,6 +23,11 @@ function App() {
   const [isLoading, setLoading] = useState(false);
   
   useEffect(() => {
+    const today = new Date();
+    store.dispatch(setToday(getDay(today) + ' ' + today.getDate() + ', ' + getMonth(today)));
+  }, []);
+
+  useEffect(() => {
     getPosition();
   }, [city]);
 
@@ -29,10 +35,17 @@ function App() {
     setLoading(true);
     axios.get(commonUrl + geoStartUrl + city + geoEndUrl + APIkey)
     .then((res) => {
-      const lon = res.data[0].lon;
-      const lat = res.data[0].lat;
-      getweather(lon, lat);
-      getFutureWeather(lon, lat);
+      if (res.data.length) {
+        store.dispatch(changeCity(city));
+        const lon = res.data[0].lon;
+        const lat = res.data[0].lat;
+        getweather(lon, lat);
+        getFutureWeather(lon, lat);
+      } else {
+        setLoading(false);
+        alert('Riprova, qualcosa è andato storto!');
+      }
+      
     })
     .catch((error) => {
       console.log(error);
@@ -67,8 +80,55 @@ function App() {
 
   const setCity = (event) => {
     setSelectedCity(event);
-    store.dispatch(changeCity(event));
   }
+
+  const getDay = (today) => {
+    switch(today.getDay()) {
+        case 1 : 
+            return 'Lunedì';
+        case 2 : 
+            return 'Martedì';
+        case 3 : 
+            return 'Mercoledì';
+        case 4 : 
+            return 'Giovedì';
+        case 5 : 
+            return 'Venerdì';
+        case 6 : 
+            return 'Sabato';
+        case 0 : 
+            return 'Domenica';
+    }
+}
+
+const getMonth = (today) => {
+    switch(today.getMonth()) {
+        case 1 : 
+            return 'Febbraio';
+        case 2 : 
+            return 'Marzo';
+        case 3 : 
+            return 'Aprile';
+        case 4 : 
+            return 'Maggio';
+        case 5 : 
+            return 'Giugno';
+        case 6 : 
+            return 'Luglio';
+        case 7 : 
+            return 'Agosto';
+        case 8 : 
+            return 'Settembre';
+        case 9 : 
+            return 'Ottobre';
+        case 10 : 
+            return 'Novembre';
+        case 11 : 
+            return 'Dicembre';
+        case 0 : 
+            return 'Gennaio';
+    }
+}
 
   return (
     <>
@@ -89,8 +149,9 @@ function App() {
               <TodayTemp />
             </div>
             <div className='col-md-16'></div>
-            <div className='col-md-5'>
+            <div className='col-md-4'>
               <Search setCity={setCity}/>
+              <Localization />
             </div>
           </div>
         </div>

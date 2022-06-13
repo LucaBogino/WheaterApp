@@ -38,14 +38,17 @@ function TodayTemp() {
 
     return (
         <div className="container">
-            <Form.Label className='common-label ms-2'>Oggi</Form.Label>
+            <Form.Label className='common-label ms-2'>Temperatura</Form.Label>
             <div className="bck br-25 w shadow">
-                <Form.Label className="now">Temperatura</Form.Label>
+                <div className='d-flex'>
+                    <Form.Label className="now">°c</Form.Label>
+                    <Form.Label className="now">h</Form.Label>
+                </div>
                 <div className="tempContainer">
                     <div className="column mt-05">
                         {
                             temps.map((temp, id) =>
-                                <div className="mb-75" key={id}>{temp}°</div>
+                                <div className="mb-75" key={id}>{temp}</div>
                             )
                         }
                     </div>
