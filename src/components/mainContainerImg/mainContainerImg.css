@@ -22,6 +22,12 @@
     font-size: 23px;
 }
 
+.pos {
+    position: absolute;
+    right: 5%;
+    top: 5%;
+}
+
 @media only screen and (max-width: 550px) {
     .containerContent {
         top: 5%;

@@ -75,6 +75,10 @@ input:focus{
   margin-bottom: 1.75rem;
 }
 
+.w-8 {
+  width: 8%;
+}
+
 .mt-05{
   margin-top: 0.5rem;
 }
@@ -94,4 +98,8 @@ input:focus{
 
 .relative {
   position: relative;
+}
+
+.w-image {
+  width: 36px;
 }

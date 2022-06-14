@@ -15,6 +15,17 @@ const reducer = (state={}, data ) => {
         case actions.TODAY:
             return {...state, today: data.today};
 
+        case actions.SAVE_CITY:
+            state.savedCities = state.savedCities ? state.savedCities : [];
+            return {...state, savedCities: [...state.savedCities, state.weather]};
+
+        case actions.DELETE_CITY:
+            let cities = state.savedCities;
+            return {...state, savedCities: cities.filter( (city) => 
+                    city.name !== state.weather.name
+                ),
+            };
+
         default:
             return state;
     }

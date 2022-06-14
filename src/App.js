@@ -6,6 +6,7 @@ import TodayTemp from './components/todayTemp/todayTemp';
 import MainContainer from './components/mainContainerImg/mainContainerImg';
 import TempShortcut from './components/tempShortcut/tempShortcut';
 import Localization from './components/localization/localization';
+import SavedCities from './components/savedCities/savedCities';
 import { useState } from 'react';
 import { changeCity, setCityweather, setFutureWeather, setToday } from "./components/stateManager/dispatchActions";
 import {Spinner} from 'react-bootstrap';
@@ -99,9 +100,9 @@ function App() {
         case 0 : 
             return 'Domenica';
     }
-}
+  }
 
-const getMonth = (today) => {
+  const getMonth = (today) => {
     switch(today.getMonth()) {
         case 1 : 
             return 'Febbraio';
@@ -128,7 +129,7 @@ const getMonth = (today) => {
         case 0 : 
             return 'Gennaio';
     }
-}
+  }
 
   return (
     <>
@@ -143,6 +144,9 @@ const getMonth = (today) => {
               <MainContainer />
             </div>
             <div className='col-md-16'></div>
+            <div className='col-md-4'>
+              <SavedCities />
+            </div>
           </div>
           <div className='RowContainer mb-5'>
             <div className='col-md-3'>
