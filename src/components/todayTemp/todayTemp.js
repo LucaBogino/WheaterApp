@@ -15,7 +15,7 @@ function TodayTemp() {
 
     useEffect(() => {
         if (cityTemp) getTodayTemp()
-      }, [cityTemp]);
+    }, [cityTemp]);
 
     const getTodayTemp = () => {
         let findTodayData = cityTemp.filter(x => new Date(x.dt_txt).toDateString() === today.toDateString());

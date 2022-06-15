@@ -7,6 +7,7 @@ import MainContainer from './components/mainContainerImg/mainContainerImg';
 import TempShortcut from './components/tempShortcut/tempShortcut';
 import Localization from './components/localization/localization';
 import SavedCities from './components/savedCities/savedCities';
+import NextDaysTemp from './components/nextDaysTemp/nextDaysTemp';
 import { useState } from 'react';
 import { changeCity, setCityweather, setFutureWeather, setToday } from "./components/stateManager/dispatchActions";
 import {Spinner} from 'react-bootstrap';
@@ -143,7 +144,6 @@ function App() {
             <div className='col-md-8'>
               <MainContainer />
             </div>
-            <div className='col-md-16'></div>
             <div className='col-md-4'>
               <SavedCities />
             </div>
@@ -152,7 +152,9 @@ function App() {
             <div className='col-md-3'>
               <TodayTemp />
             </div>
-            <div className='col-md-16'></div>
+            <div className='col-md-16'>
+              <NextDaysTemp />
+            </div>
             <div className='col-md-4'>
               <Search setCity={setCity}/>
               <Localization />
