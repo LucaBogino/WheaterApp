@@ -27,8 +27,12 @@ function MainContainer() {
     }, [cityInfo]);
 
     const saveNewCity = () => {
-        store.dispatch(saveCity()); 
-        setImg(true);
+        if (!cities || cities.length < 3) {
+            store.dispatch(saveCity()); 
+            setImg(true);
+        } else {
+            alert('Puoi avere solo 3 città salvate')
+        }
     }
 
     const deleteLastCity = () => {

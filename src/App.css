@@ -1,6 +1,6 @@
 .RowContainer {
     display: flex;
-    align-items: flex-start;
+    align-items: end;
     justify-content: space-between;
 }
 
