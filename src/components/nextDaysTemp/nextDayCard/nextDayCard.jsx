@@ -40,7 +40,7 @@ function NextDayCard(props) {
                 {props.dayData.dayName}
             </div>   
             <div>
-                {props.dayData.media}
+                {props.dayData.media}°
             </div>
             <div>
                 <img className='img-w' src={image} alt="weather"/>
