@@ -16,3 +16,8 @@
 .bck-card {
     background-image: linear-gradient(to top, #d6f5ff 0%, #819af1 100%);
 }
+
+.reg-w {
+    max-width: 30%;
+    min-width: 30%;
+}

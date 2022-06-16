@@ -152,7 +152,7 @@ function App() {
             <div className='col-md-3'>
               <TodayTemp />
             </div>
-            <div className='col-md-16'>
+            <div className='col-md-5'>
               <NextDaysTemp />
             </div>
             <div className='col-md-4'>

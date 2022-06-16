@@ -35,7 +35,7 @@ function NextDayCard(props) {
     }
 
     return (
-        <div className={'f-column w br-25 n_d_card bck-card shadow'}>
+        <div className='f-column w br-25 n_d_card bck-card shadow reg-w'>
             <div>
                 {props.dayData.dayName}
             </div>   
