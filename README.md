@@ -1,6 +1,6 @@
 # :link: Demo
 
-https://62ab2c62f8ac9c0e56ad02c1--gorgeous-fenglisu-1ca278.netlify.app/
+https://gorgeous-fenglisu-1ca278.netlify.app/
 
 # :thermometer: WeatherApp
 
