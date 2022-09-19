@@ -6,7 +6,7 @@ https://62ab2c62f8ac9c0e56ad02c1--gorgeous-fenglisu-1ca278.netlify.app/
 
 WeatherApp è un'applicazione web che permette di consultare i dati meteo per una determinata città scelta dall'utente che usufruisce del servizio.
 
-L'utente ha la possibilità di cercare la città a lui interessata tramite l'opportuno campo di ricerca, tutte le città europee e non sono disponibili.
+L'utente ha la possibilità di cercare la città a lui interessata tramite l'opportuno campo di ricerca, tutte le città del mondo.
 
 I dati mostrati all'utente sono relativi alla situazione meteorologica della città scelta.
 Viene mostrato un sommario dello stato attuale e della temperatura corrente, inoltre sono mostrati i dati per le ore future con le relative temperature.
