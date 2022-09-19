@@ -56,7 +56,7 @@ function CityCard(props) {
     }
 
     return(
-        <div className={'city_card w mt-2 shadow ' + bck}> 
+        <div className={'city_card w mt-2 shadow pointer ' + bck} onClick={()=>props.selectSaveCity(props.city.name)}> 
             <div>
                 <label>{props.city.name}</label>
                 <div className="fs-10">{day}</div>

@@ -145,7 +145,7 @@ function App() {
               <MainContainer />
             </div>
             <div className='col-md-4'>
-              <SavedCities />
+              <SavedCities selectSaveCity={setCity}/>
             </div>
           </div>
           <div className='RowContainer mb-5'>

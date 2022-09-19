@@ -1,9 +1,13 @@
 import { useSelector } from "react-redux";
 import CityCard from './savedCitiesCard/savedCitiesCard';
 
-function SavedCities() {
+function SavedCities(props) {
 
     const cities = useSelector(state => state.savedCities);
+
+    const selectSaveCity = (event) => {
+        props.selectSaveCity(event);
+    }
 
     return (
         <>
@@ -19,7 +23,7 @@ function SavedCities() {
             { 
                 ((cities?.length && cities) || []).map((city, i)=>(
                     <div key={i} className="container">
-                        <CityCard city={city}/>
+                        <CityCard city={city} selectSaveCity={selectSaveCity}/>
                     </div>
                 ))
             }
