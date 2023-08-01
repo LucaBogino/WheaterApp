@@ -139,9 +139,9 @@ function DashBoard () {
             {
               isLoading? <Spinner className='loading' animation="border" variant="primary" /> : <span></span>
             }
-            <TempShortcut />
+            <TempShortcut setCity={setCity}/>
             <div className={isMobile ? "app_mobile mt-5" : "app mt-5"}>
-                <Row className='mb-5'>
+                <Row className='mb-5 dashboard_row'>
                     <Col sm={8}>
                         <MainContainer />
                     </Col>
@@ -149,7 +149,7 @@ function DashBoard () {
                         <SavedCities selectSaveCity={setCity}/>
                     </Col>
                 </Row>
-                <Row className='mb-5'>
+                <Row className='mb-5 dashboard_row'>
                     <Col sm>
                         <TodayTemp />
                     </Col>
@@ -157,7 +157,12 @@ function DashBoard () {
                         <NextDaysTemp />
                     </Col>
                     <Col sm>
-                        <Search setCity={setCity}/>
+                        {
+                            isMobile ?
+                            <div></div>
+                            :
+                            <Search setCity={setCity}/>
+                        }
                         <Localization />
                     </Col>
                 </Row>

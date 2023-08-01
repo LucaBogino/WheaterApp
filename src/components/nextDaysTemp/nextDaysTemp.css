@@ -1,3 +1,9 @@
 .bck {
     background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);
 }
+
+.centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

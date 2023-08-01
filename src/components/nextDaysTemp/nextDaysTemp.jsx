@@ -89,7 +89,7 @@ function NextDaysTemp() {
         <div className='shadow bck p-3 br-25'>
             <label className='common-label w ms-2'>Prossimi giorni</label>
             <div className='w ms-2 form-label'>temperature medie</div>
-            <div className='d-flex'>
+            <div className='d-flex centered'>
                 <NextDayCard dayData={nextDay}/>
                 <NextDayCard dayData={nextNextDay}/>
                 <NextDayCard dayData={nextNextNextDay}/>
