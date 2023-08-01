@@ -27,7 +27,7 @@ function Search(props) {
     }
 
     return (
-        <div className='container'>
+        <div className=''>
             <Form.Label className='common-label ms-2'>Cerca</Form.Label>
             <div className='search_container common_b_radius'>
             <input className='w-100 inp common_b_radius' value={city} placeholder="ex: Milano" onChange={(e)=>handleChangeCity(e)} onKeyDown={(e)=>enterPress(e)}></input>

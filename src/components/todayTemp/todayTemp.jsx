@@ -37,7 +37,7 @@ function TodayTemp() {
     }
 
     return (
-        <div className="container">
+        <div className="">
             <Form.Label className='common-label ms-2'>Temperatura</Form.Label>
             <div className="bck br-25 w shadow">
                 <div className='d-flex'>

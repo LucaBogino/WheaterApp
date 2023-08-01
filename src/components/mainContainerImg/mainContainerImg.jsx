@@ -41,7 +41,7 @@ function MainContainer() {
     }
 
     return (
-        <div className='container'>
+        <div className=''>
             <div className='w relative bckMainContainer br-25 shadow relative'>
                 <img className='w-image pos pointer' src={img ? saved : add} onClick={img ? deleteLastCity : saveNewCity}/>
                 <div className='containerContent'>

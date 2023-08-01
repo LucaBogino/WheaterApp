@@ -13,7 +13,7 @@ function SavedCities(props) {
         <>
             {
                 (cities?.length && cities) ? 
-                <div className="container">
+                <div className="">
                     <label className="common-label">Città salvate</label>
                 </div>
                 :
@@ -22,7 +22,7 @@ function SavedCities(props) {
             
             { 
                 ((cities?.length && cities) || []).map((city, i)=>(
-                    <div key={i} className="container">
+                    <div key={i} className="">
                         <CityCard city={city} selectSaveCity={selectSaveCity}/>
                     </div>
                 ))
